@@ -63,12 +63,12 @@ const ModalEliminarColaborador = () => { //475
                                 </div>
                                 <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
                                     <Dialog.Title as="h3" className="text-lg leading-6 font-bold text-gray-900">
-                                        ¿Eliminar Colaborador {colaborador.nombre}?
+                                        Delete this contributor? {colaborador.nombre}?
                                     </Dialog.Title>
 
                                     <div className='mt-2'>
                                         <p className='text-sm text-gray-600'>
-                                            Una vez eliminado, esta persona no podrá acceder al Proyecto.
+                                            Once deleted, this person will not be able to access this Project.
                                         </p>
                                     </div>
 
@@ -82,14 +82,14 @@ const ModalEliminarColaborador = () => { //475
                                     shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 
                                     focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
                                     onClick={eliminarColaborador} //476
-                                >Eliminar</button>
+                                >Delete</button>
                                 <button
                                     type="button"
                                     className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 
                                     shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:text-gray-500 
                                     focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:w-auto sm:text-sm"
                                     onClick={handleModalEliminarColaborador}
-                                >Cancelar</button>
+                                >Cancel</button>
                         </div>
                         </div>
                     </Transition.Child>

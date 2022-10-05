@@ -2,15 +2,15 @@ import { Outlet, Navigate } from "react-router-dom" //431
 import Header from "../components/Header"; //433
 import Sidebar from "../components/Sidebar"; //433
 import useAuth from "../hooks/useAuth" //431
-
+import Spinner from "../components/Spinner";
 const RutaProtegida = () => { //431
 
     const {auth, cargando} = useAuth();
     
-    if(cargando) return 'Cargando...'
   return (
     <>
-        {auth._id ? 
+        {cargando ? <Spinner/> : 
+        auth._id ? 
             (
                 <div className="bg-gray-100">
                     <Header/>
@@ -23,7 +23,9 @@ const RutaProtegida = () => { //431
                         </main>
                     </div>
                 </div>
-            ) : <Navigate to="/" />}
+            ) : <Navigate to="/" />
+        }
+        
     </>
   )
 }

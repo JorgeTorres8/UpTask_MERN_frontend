@@ -8,5 +8,5 @@ export const formatearFecha = fecha => { //459
         day: 'numeric'
     }
 
-    return nuevaFecha.toLocaleDateString('es-ES', opciones)
+    return nuevaFecha.toLocaleDateString('en-EN', opciones)
 }

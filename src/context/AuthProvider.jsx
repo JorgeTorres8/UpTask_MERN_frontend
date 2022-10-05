@@ -31,9 +31,9 @@ const AuthProvider = ({children}) => {
                 const {data} = await clienteAxios('/usuarios/perfil', config)
                 setAuth(data)
                 //navigate('/proyectos') //442
-                if(data._id && location.pathname === '/') {
+                /*if(data._id && location.pathname === '/') {
                     navigate('/proyectos')
-                 }
+                 }*/
             } catch (error) {
                 setAuth({}); //432
             } finally {

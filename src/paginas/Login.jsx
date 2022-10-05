@@ -19,7 +19,7 @@ const Login = () => {
 
     if([email, password].includes('')) {
       setAlerta({
-        msg: 'Todos los campos son obligatorios',
+        msg: 'All fields are required',
         error: true
       });
       return;
@@ -43,8 +43,8 @@ const Login = () => {
   const {msg} = alerta;
   return (
     <>
-      <h1 className="text-sky-600 font-black text-6xl capitalize">Inicia sesión y administra tus {''}
-        <span className="text-slate-700">proyectos</span></h1>
+      <h1 className="text-sky-600 font-black text-6xl capitalize">Login and manage your {''}
+        <span className="text-slate-700">projects</span></h1>
       
       {msg && <Alerta alerta={alerta}/> /*425*/}
 
@@ -56,11 +56,11 @@ const Login = () => {
           <label
             htmlFor="email"
             className="uppercase text-gray-600 block text-xl font-bold"
-            >Email</label>
+            >E-mail</label>
           <input
             id="email"
             type="email"
-            placeholder="Email de Registro"
+            placeholder="Registration E-mail"
             className="mt-3 bg-gray-50 w-full border rounded-xl p-3"
             value={email} //425
             onChange={e => setEmail(e.target.value)} //425
@@ -75,7 +75,7 @@ const Login = () => {
           <input
             id="password"
             type="password"
-            placeholder="Password de Registro"
+            placeholder="Registration Password"
             className="mt-3 bg-gray-50 w-full border rounded-xl p-3"
             value={password} //425
             onChange={e => setPassword(e.target.value)} //425
@@ -84,7 +84,7 @@ const Login = () => {
 
         <input
           type="submit"
-          value="Iniciar Sesión"
+          value="Log in"
           className="bg-sky-700 mb-5 w-full py-3 text-white font-bold uppercase rounded hover:cursor-pointer hover:bg-sky-800 transition-colors"
         />
       </form>
@@ -93,12 +93,12 @@ const Login = () => {
         <Link
           className='block text-center my-5 text-slate-500 uppercase text-sm'
           to="/registrar"
-        >¿No tienes una cuenta? Regístrate</Link>
+        >You do not have an account? Sign up</Link>
 
         <Link
           className='block text-center my-5 text-slate-500 uppercase text-sm'
-          to="/registrar"
-        >Olvidé Mi Password</Link> 
+          to="/olvide-password"
+        >I forgot my password</Link>
       
       </nav>
     </>

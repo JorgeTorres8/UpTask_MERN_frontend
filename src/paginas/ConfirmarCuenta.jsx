@@ -39,8 +39,8 @@ const ConfirmarCuenta = () => { //contenido 410 (return)
 
   return (
     <>
-      <h1 className="text-sky-600 font-black text-6xl capitalize">Confirma tu cuenta y empieza a crear tus {' '}
-      <span className="text-slate-700">Proyectos</span></h1>
+      <h1 className="text-sky-600 font-black text-6xl capitalize">Confirm your account and start creating your {' '}
+      <span className="text-slate-700">Projects</span></h1>
 
       <div className="mt-20 md:mt-10 shadow-lg px-5 py-10 bg-white rounded-xl">
         {msg && <Alerta alerta={alerta} />}
@@ -48,7 +48,7 @@ const ConfirmarCuenta = () => { //contenido 410 (return)
           <Link
           className="block text-center my-5 text-slate-500 uppercase text-sm"
           to="/"
-          >Inicia Sesión</Link>
+          >Log in</Link>
         )}
       </div>
     </>

@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom' //456
 import useProyectos from '../hooks/useProyectos'
 import Alerta from './Alerta'
 
-const PRIORIDAD = ['Baja', 'Media', 'Alta']
+const PRIORIDAD = ['Low', 'Medium', 'High']
 
 
 const ModalFormularioTarea = () => {
@@ -41,7 +41,7 @@ const ModalFormularioTarea = () => {
 
         if([nombre, descripcion, prioridad, fechaEntrega].includes('')) {
             mostrarAlerta({
-                msg: 'Todos los campos son obligatorios',
+                msg: 'All fields are required',
                 error: true
             })
             return;
@@ -111,7 +111,7 @@ const ModalFormularioTarea = () => {
                             <div className="sm:flex sm:items-start">
                                 <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
                                     <Dialog.Title as="h3" className="text-lg leading-6 font-bold text-gray-900">
-                                        {id ? 'Editar Tarea' : 'Crear Tarea'}
+                                        {id ? 'Edit Task' : 'Create Task'}
                                     </Dialog.Title>
                                     {msg && <Alerta alerta={alerta}/>}
                                     <form
@@ -122,13 +122,13 @@ const ModalFormularioTarea = () => {
                                                 className='text-gray-700 uppercase font-bold text-sm'
                                                 htmlFor='nombre'
                                             >
-                                                Nombre Tarea
+                                                Task Name
                                             </label>
 
                                             <input
                                                 type="text"
                                                 id="nombre"
-                                                placeholder='Nombre de la Tarea'
+                                                placeholder='Name of Task'
                                                 className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md'
                                                 value={nombre}
                                                 onChange={e => setNombre(e.target.value)}
@@ -140,12 +140,12 @@ const ModalFormularioTarea = () => {
                                                 className='text-gray-700 uppercase font-bold text-sm'
                                                 htmlFor='descripcion'
                                             >
-                                                Descripcion Tarea
+                                                Task Description
                                             </label>
 
                                             <textarea
                                                 id="descripcion"
-                                                placeholder='Descripcion de la Tarea'
+                                                placeholder='Description of the Task'
                                                 className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md'
                                                 value={descripcion}
                                                 onChange={e => setDescripcion(e.target.value)}
@@ -157,7 +157,7 @@ const ModalFormularioTarea = () => {
                                                 className='text-gray-700 uppercase font-bold text-sm'
                                                 htmlFor='fecha-entrega'
                                             >
-                                                Fecha Entrega
+                                            Deadline
                                             </label>
 
                                             <input
@@ -174,7 +174,7 @@ const ModalFormularioTarea = () => {
                                                 className='text-gray-700 uppercase font-bold text-sm'
                                                 htmlFor='priorirdad'
                                             >
-                                                Priorirdad Tarea
+                                                Task Priority
                                             </label>
 
                                             <select
@@ -183,7 +183,7 @@ const ModalFormularioTarea = () => {
                                                 value={prioridad}
                                                 onChange={e => setPrioridad(e.target.value)}
                                             >
-                                                <option value="">-- Seleccionar --</option>
+                                                <option value="">-- Select --</option>
                                                 {PRIORIDAD.map(opcion => (
                                                     <option key={opcion}>{opcion}</option>
                                                 ))}
@@ -194,7 +194,7 @@ const ModalFormularioTarea = () => {
                                             type="submit"
                                             className='bg-sky-600 hover:bg-sky-700 p-3 w-full text-white uppercase 
                                             font-bold cursor-pointer transition-colors rounded text-sm'
-                                            value={id ? 'Guardar Cambios' : 'Crear Tarea'}
+                                            value={id ? 'Save Changes' : 'Create Task'}
                                         />
                                     </form>
                                 </div>

@@ -22,7 +22,7 @@ const Proyectos = () => {
   const {msg} = alerta; //483 
   return (
     <>
-      <h1 className="text-4xl font-black">Proyectos</h1>
+      <h1 className="text-4xl font-black">Projects</h1>
 
       {msg && <Alerta alerta={alerta}/>}
 
@@ -36,7 +36,7 @@ const Proyectos = () => {
           />
         ))
         
-        : <p className="text-center text-gray-600 uppercase p-5">No hay</p>}
+        : <p className="text-center text-gray-600 uppercase p-5">No Projects</p>}
       </div>
     </>
   )

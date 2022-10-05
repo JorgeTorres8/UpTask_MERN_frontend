@@ -6,7 +6,6 @@ const Colaborador = ({colaborador}) => { //473 contenido en 474
 
   const {email, nombre} = colaborador;
 
-
   return (
     <div className="border-b p-5 flex justify-between items-center">
         <div>
@@ -19,7 +18,7 @@ const Colaborador = ({colaborador}) => { //473 contenido en 474
                 type="button"
                 className="bg-red-600 px-4 py-3 text-white uppercase font-bold text-sm rounded-lg"
                 onClick={() => handleModalEliminarColaborador(colaborador)} //475
-            >Eliminar</button>
+            >Delete</button>
         </div>
     </div>
   )

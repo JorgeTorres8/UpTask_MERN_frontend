@@ -25,18 +25,18 @@ const Header = () => { //433
                     type="button"
                     className="font-bold uppercase"
                     onClick={() => handleBuscador()}
-                >Buscar Proyecto</button>
+                >Search Project</button>
 
                 <Link
                     to="/proyectos"
                     className="font-bold uppercase"
-                >Proyectos</Link>
+                >Projects</Link>
 
                 <button
                     type="button"
                     className="text-white text-sm bg-sky-600 p-3 rounded-md uppercase font-bold"
                     onClick={handleCerrarSesion} //498
-                >Cerrar Sesión</button>
+                >Logout</button>
 
                 <Busqueda  /*487*/ />
             </div>

@@ -14,7 +14,7 @@ const OlvidePassword = () => {
 
     if(email.length === '' || email.length < 6) {
       setAlerta({
-        msg: "El Email es obligatorio",
+        msg: "E-mail is required",
         error: true
       });
       return;
@@ -42,8 +42,8 @@ const OlvidePassword = () => {
 
   return (
     <>
-      <h1 className="text-sky-600 font-black text-6xl capitalize">Recupera tu Acceso y no pierdas tus {' '}
-      <span className="text-slate-700">Proyectos</span></h1>
+      <h1 className="text-sky-600 font-black text-6xl capitalize">Recover your Access and do not lose your projects {' '}
+      <span className="text-slate-700">Projects</span></h1>
 
       {msg && <Alerta alerta={alerta} />}
 
@@ -55,12 +55,12 @@ const OlvidePassword = () => {
           <label
             htmlFor="email"
             className="uppercase text-gray-600 block text-xl font-bold"
-          >Email</label>
+          >E-mail</label>
 
           <input
             type="text"
             id="email"
-            placeholder="Email de Registro"
+            placeholder="Registration E-mail"
             className="mt-3 w-full bg-gray-50 border rounded-xl p-3"
             value={email} //420
             onChange={e => setEmail(e.target.value)}
@@ -69,7 +69,7 @@ const OlvidePassword = () => {
 
         <input
           type="submit"
-          value="Enviar Intrucciones"
+          value="Send Instructions"
           className="bg-sky-700 mb-5 w-full text-white py-3 uppercase font-bold rounded hover:cursor-pointer hover:bg-sky-800 transition-colors"
         />
       </form>
@@ -78,12 +78,12 @@ const OlvidePassword = () => {
         <Link
           className="block text-center my-5 text-slate-500 uppercase text-sm"
           to="/"
-        >¿Ya tienes una cuenta? Inicia Sesión</Link>
+        >Do you already have an account? Log in</Link>
 
         <Link
           className="block text-center my-5 text-slate-500 uppercase text-sm"
-          to="/"
-        >¿No tienes una cuenta? Regístrate</Link>
+          to="/registrar"
+        >You do not have an account? Sign up</Link>
       </nav>
     </>
   )

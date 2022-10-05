@@ -21,6 +21,9 @@ const ProyectosProvider = ({children}) => {
     const [modalEliminarColaborador, setModalEliminarColaborador] = useState(false); //475
     const [buscador, setBuscador] = useState(false); //487
 
+    const[loading, setLoading] = useState(false)
+    const[loading2, setLoading2] = useState(false)
+
     const navigate = useNavigate(); //438
     const {auth} = useAuth(); //499 
 
@@ -88,7 +91,7 @@ const ProyectosProvider = ({children}) => {
             setProyectos([...proyectos, data]) //441 para que cuando introduzca un nuevo proyecto aparezca de una en /proyectos
         
             setAlerta({
-                msg: 'Proyecto Creado Correctamente',
+                msg: 'Project created successfully',
                 error: false
             })
 
@@ -121,7 +124,7 @@ const ProyectosProvider = ({children}) => {
             setProyectos(proyectosActualizados)
 
             setAlerta({
-                msg: 'Proyecto Actualizado Correctamente',
+                msg: 'Project Updated Successfully',
                 error: false
             })
 
@@ -138,7 +141,9 @@ const ProyectosProvider = ({children}) => {
 
 
     const obtenerProyecto = async id => { //443
-        setCargando(true); //443
+
+        setLoading2(true)
+
         try {
             const token = localStorage.getItem('token')
             if(!token) return
@@ -163,7 +168,7 @@ const ProyectosProvider = ({children}) => {
                 setAlerta({})
             }, 3000);
         } finally {
-            setCargando(false); //443
+            setLoading2(false); //443
         }
         
         
@@ -312,7 +317,7 @@ const ProyectosProvider = ({children}) => {
     }
 
     const submitColaborador = async email => {//469
-        setCargando(true);
+        setLoading(true);
         try {
             const token = localStorage.getItem('token')
             if(!token) return
@@ -334,7 +339,7 @@ const ProyectosProvider = ({children}) => {
                 error: true
             })
         } finally {
-            setCargando(false);
+            setLoading(false);
         }
     }
 
@@ -507,7 +512,9 @@ const ProyectosProvider = ({children}) => {
                 eliminarTareaProyecto, //495
                 actualizarTareaProyecto, //496
                 cambiarEstadoTarea, //497
-                cerrarSesionProyectos //498
+                cerrarSesionProyectos, //498
+                loading,
+                loading2
             }}
         > {children}
         </ProyectosContext.Provider>

@@ -35,7 +35,7 @@ const NuevoPassword = () => { //contenido 410(return)
 
     if(password.length < 6 ) {
       setAlerta({
-        msg: 'El password debe ser mínino 6 carácteres',
+        msg: 'The password must be at least 6 characters',
         error: true
       })
       return;
@@ -62,8 +62,8 @@ const NuevoPassword = () => { //contenido 410(return)
 
   return (
     <>
-      <h1 className="text-sky-600 font-black text-6xl capitalize">Reestablece tu password y no pierdas acceso a tus {' '}
-      <span className="text-slate-700">Proyectos</span></h1>
+      <h1 className="text-sky-600 font-black text-6xl capitalize">Reset your password and do not lose access to your {' '}
+      <span className="text-slate-700">Projects</span></h1>
 
       {msg && <Alerta alerta={alerta}/> }
 
@@ -71,11 +71,12 @@ const NuevoPassword = () => { //contenido 410(return)
         <form 
           className="my-10 bg-white shadow rounded-lg p-10"
           onSubmit={handleSubmit}>
+          
           <div className="my-5">
             <label
               htmlFor="password"
               className="uppercase text-gray-600 font-bold text-xl block"
-            >Nuevo Password</label>
+            >New Password</label>
             <input
               id="password"
               type="password"
@@ -88,7 +89,7 @@ const NuevoPassword = () => { //contenido 410(return)
 
           <input
             type="submit"
-            value="Guardar Nuevo Password"
+            value="Save New Password"
             className="bg-sky-700 mb-5 w-full text-white py-3 uppercase font-bold rounded hover:cursor-pointer hover:bg-sky-800 transition-colors"
           />
       </form> 
@@ -98,7 +99,7 @@ const NuevoPassword = () => { //contenido 410(return)
         <Link
         className="block text-center my-5 text-slate-500 uppercase text-sm"
         to="/"
-        >Inicia Sesión</Link>
+        >Log in</Link>
       )}
       
   </>

@@ -46,7 +46,7 @@ const Busqueda = () => { //487
                     <div className="relative">
                         <Combobox.Input
                             className="h-12 w-full border-0 bg-transparent pl-4 pr-4 text-gray-800 placeholder-gray-400 focus:ring-0 sm:text-sm"
-                            placeholder="Buscar..."
+                            placeholder="Search..."
                             onChange={e => setBusqueda(e.target.value)} //487
                         />
                     </div>

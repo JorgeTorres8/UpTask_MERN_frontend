@@ -3,10 +3,10 @@ import FormularioColaborador from "../components/FormularioColaborador"
 import useProyectos from "../hooks/useProyectos" //469
 import { useParams } from "react-router-dom" //469
 import Alerta from "../components/Alerta" //472
-
+import Spinner2 from "../components/Spinner2"
 const NuevoColaborador = () => { //468
 
-  const {obtenerProyecto, proyecto, cargando, colaborador, agregarColaborador, alerta} = useProyectos() 
+  const {obtenerProyecto, proyecto, loading, colaborador, agregarColaborador, alerta} = useProyectos() 
   const params = useParams();
 
   useEffect(() => { //469
@@ -19,16 +19,16 @@ const NuevoColaborador = () => { //468
 
   return (
     <>
-        <h1 className="text-4xl font-black">Añadir Colaborador(a) al Proyecto: {proyecto.nombre}</h1>
+        <h1 className="text-4xl font-black">Add Contributor to the Project: {proyecto.nombre}</h1>
 
         <div className="mt-10 flex justify-center">
             <FormularioColaborador/>
         </div>
 
-        {cargando ? <p className="font-bold text-center mt-10">cargando...</p> : colaborador?._id && (//471   
+        {loading ? <Spinner2/> : colaborador?._id && (//471   
             <div className="flex justify-center mt-10">
                 <div className="bg-white py-10 px-5 md:w-1/2 rounded-lg shadow w-full">
-                    <h2 className="text-center mb-10 text-2xl font-bold">Resultado</h2>
+                    <h2 className="text-center mb-10 text-2xl font-bold">Result</h2>
 
                     <div className="flex justify-between items-center">
                         <p>{colaborador.nombre}</p>
@@ -39,7 +39,7 @@ const NuevoColaborador = () => { //468
                             onClick={()=> agregarColaborador({
                                 email: colaborador.email
                             })}
-                        >Agregar al Proyecto</button>
+                        >Add to Project</button>
                     </div>
 
                 </div>
